@@ -1,0 +1,31 @@
+<section fxLayout="column" fxFlexAlign="stretch" fxFlex="80%" fxFlex.lt-md="100%" style="margin:auto">
+  <div fxFlexAlign="center">
+      <p>Parent Transactions</p>
+  </div>
+
+  <p fxFlexAlign="center">In here, you can see all parent transaction:</p>
+
+  <div >
+    <mat-card>
+        <mat-card-content>
+          <mat-table class="table" [dataSource]="dataSource" matSort matSortActive="id" matSortDirection="asc" [matSortDisableClear]="true">
+            <ng-container matColumnDef="id">
+              <div *matHeaderCellDef class="table-cell table-header">#</div>
+              <div *matCellDef="let element" class="table-cell">{{element.id}}</div>
+            </ng-container>
+            <ng-container matColumnDef="name">
+              <div *matHeaderCellDef class="table-cell table-header">Name</div>
+              <div class="cell" *matCellDef="let element" class="table-cell">{{element.name}}</div>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+            <mat-row *matRowDef="let row; columns: displayedColumns" (click)="onRowClicked(row)"></mat-row>
+          </mat-table>
+
+          <mat-paginator [length]="22" [pageSize]="5" [pageSizeOptions]="[3, 5, 10]" style-paginator showFirstLastButtons aria-label="Select Page"></mat-paginator>
+        </mat-card-content>
+    </mat-card>
+  </div>
+
+</section>
