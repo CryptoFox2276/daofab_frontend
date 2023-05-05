@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
-import { ParentsComponent } from './pages/parents/parents.component';
-import { ChildsComponent } from './pages/childs/childs.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -20,8 +18,6 @@ import { DetailComponent } from './pages/detail/detail.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ParentsComponent,
-    ChildsComponent,
     HomeComponent,
     HeaderComponent,
     FooterComponent,
