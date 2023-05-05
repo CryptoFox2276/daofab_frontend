@@ -43,6 +43,12 @@ mat-tab-group p {
   white-space: nowrap;
   overflow: hidden;
 }
+.no-table-cell {
+  width: 100%;
+  padding: 1rem;
+  text-align: left;
+  font-size: 1rem;
+}
 mat-row {
   background-color: #fff;
   margin-bottom: .8rem;

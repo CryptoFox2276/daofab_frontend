@@ -14,6 +14,8 @@ import { FooterComponent } from './shared/layout/footer/footer.component';
 import { MaterialModule } from './material/material.module';
 import { LayoutComponent } from './shared/layout/layout.component';
 import { SidenavListComponent } from './shared/layout/sidenav-list/sidenav-list.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { DetailComponent } from './pages/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { SidenavListComponent } from './shared/layout/sidenav-list/sidenav-list.
     FooterComponent,
     LayoutComponent,
     SidenavListComponent,
+    DetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,8 +36,9 @@ import { SidenavListComponent } from './shared/layout/sidenav-list/sidenav-list.
     AppRoutingModule,
     MaterialModule,
     FlexLayoutModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

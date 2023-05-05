@@ -1,9 +1,9 @@
 <section fxLayout="column" fxFlexAlign="stretch" fxFlex="80%" fxFlex.lt-md="100%" style="margin:auto">
   <div fxFlexAlign="center center">
-      <p>Parent Transactions</p>
+      <p>Detailed Transactions</p>
   </div>
 
-  <p fxFlexAlign="center">In here, you can see all parent transaction:</p>
+  <p fxFlexAlign="center">In here, you can see detailed transaction</p>
 
   <div >
     <mat-card>
@@ -15,25 +15,27 @@
             </ng-container>
             <ng-container matColumnDef="sender">
               <div *matHeaderCellDef class="table-cell table-header">Sender</div>
-              <div class="cell" *matCellDef="let element" class="table-cell">{{element.sender}}</div>
+              <div *matCellDef="let element" class="table-cell">{{element.sender}}</div>
             </ng-container>
             <ng-container matColumnDef="receiver">
               <div *matHeaderCellDef class="table-cell table-header">Receiver</div>
-              <div class="cell" *matCellDef="let element" class="table-cell">{{element.receiver}}</div>
+              <div *matCellDef="let element" class="table-cell">{{element.receiver}}</div>
             </ng-container>
             <ng-container matColumnDef="totalAmount">
               <div *matHeaderCellDef class="table-cell table-header">Total Amount</div>
-              <div class="cell" *matCellDef="let element" class="table-cell">{{element.totalAmount}}</div>
+              <div *matCellDef="let element" class="table-cell">{{element.totalAmount}}</div>
             </ng-container>
             <ng-container matColumnDef="totalPaidAmount">
               <div *matHeaderCellDef class="table-cell table-header">Total Paid Amount</div>
-              <div class="cell" *matCellDef="let element" class="table-cell">{{element.totalPaidAmount}}</div>
+              <div *matCellDef="let element" class="table-cell">{{element.totalPaidAmount}}</div>
             </ng-container>
 
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
 
-            <mat-row *matRowDef="let row; columns: displayedColumns" (click)="onRowClicked(row)"></mat-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
           </mat-table>
+
+          <div *ngIf="dataSource.length == 0" class="no-table-cell">No records found</div>
 
           <mat-paginator [length]="length" [pageSize]="3" [pageSizeOptions]="[2, 3, 5, 10]" style-paginator showFirstLastButtons aria-label="Select Page"></mat-paginator>
         </mat-card-content>

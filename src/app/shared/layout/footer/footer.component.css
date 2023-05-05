@@ -1,3 +1,14 @@
 footer div span.logo-font {
+  text-align: center;
   cursor: pointer;
+}
+footer .container {
+  text-align: center;
+  font-size: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  footer .container {
+    font-size: .8rem;
+  }
 }
