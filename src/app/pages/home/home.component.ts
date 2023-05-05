@@ -83,11 +83,6 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  public ngAfterViewInit() {
-    console.log('ngVAfterViewInit');
-
-  }
-
   public get dataSource():any {
     if(this.loading || this.tableData.length == 0) return [];
     return this._dataSource;
@@ -98,7 +93,7 @@ export class HomeComponent implements OnInit {
   }
 
   public onRowClicked(row:ITableData) {
-    console.log('Row clicked: ', row);
+    // console.log('Row clicked: ', row);
     this.route.navigate(['detail'], {queryParams:{id: row.id}});
   }
 }

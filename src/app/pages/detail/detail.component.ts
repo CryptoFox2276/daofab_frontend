@@ -31,16 +31,12 @@ export class DetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log('detai.component')
     this.loading = true;
     this.router.queryParams.subscribe(query => {
       if(Object.keys(query).length == 0) return;
-      console.log("query:",Object.keys(query).length);
       this.parentService.getById(query['id'], (res:IParent) => {
-        console.log(res)
         let parent:IParent = res;
         this.childService.getChildsByParentId(query['id'], (res:IChild[]) => {
-          console.log(res);
           this.loading = false;
           let index = 0;
           res?.forEach(item => {

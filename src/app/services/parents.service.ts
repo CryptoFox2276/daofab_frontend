@@ -12,9 +12,7 @@ export class ParentsService {
 
   constructor(
     private http: HttpClient
-  ) {
-    console.log("[parents.service] constructor()");
-  }
+  ) {}
 
   getUrl(uri: string): string {
     return this.apiURL + uri;

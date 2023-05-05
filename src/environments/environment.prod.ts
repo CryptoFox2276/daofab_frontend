@@ -1,4 +1,4 @@
-const serverUrl = 'http://localhost:8080/';
+const serverUrl = '';
 
 export const environment = {
   production: false,
